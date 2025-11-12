@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+export default function App(){
+  const [actresses, setActresses] = useState ([]);
+}
 
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function fetcActresses() {
+  axios.get("https://lanciweb.github.io/demo/api/actresses/")
+  .then((response) => setActresses(response.data) )
   return (
     <>
-     
+     <ul>
+      <h1>Lista Attrici</h1>
+      
+
+     </ul>
 
 
 
@@ -21,4 +28,3 @@ function App() {
   )
 }
 
-export default function App()
