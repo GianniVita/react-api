@@ -27,12 +27,12 @@ export default function App() {
       <div className='container'>
         <h1> 🕴🏻Lista Attrici 🎭</h1>
         <div className='list-group'>
-          {actresses.map((actress) => (
-            <div>
+          {actresses.map((actress, index) => (
+            <div key={index}>
               <li className='list-group-item' key={actress.id}>{actress.name}</li>
               <div className="card">
                 <ul>
-                  <li className="list-group-item">foto: {actress.image}</li>
+                  <li className="list-group-item">foto: <img src={actress.image} alt="" /></li>
                   <li className="list-group-item">anno di nascita: {actress.birth_year}</li>
                   <li className="list-group-item">nazionalità: {actress.nationality}</li>
                   <li className="list-group-item">biogafia: {actress.biography}</li>
